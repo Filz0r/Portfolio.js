@@ -1,0 +1,8 @@
+.env
+uploads/
+logs/
+node_modules/
+.vscode/
+server.key
+server.cert
+config.json

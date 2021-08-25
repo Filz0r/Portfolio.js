@@ -1,0 +1,37 @@
+<section class="skillAdd">
+  <div class="container flex flex-colum">
+    <% if (typeof message !== "undefined") { %>
+    <div class="alert alert-error"><%= message %></div>
+    <% } %>
+    <form action="/admin/skills" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="category">Skill Category</label>
+        <select name="category" id="category" value="<%= skill.category %> ">
+          <option value="Web Development">Web Development</option>
+          <option value="DevOps">DevOps</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="name">Skill Name</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          class="form-control"
+          value="<%= skill.name%> "
+        />
+      </div>
+      <div class="form-group">
+        <div class="new-button">
+          <label for="logo">Skill logo</label>
+          <input name="logo" id="logo" type="file" required/>
+        </div>
+      </div>
+
+      <div class="btn-group">
+        <a href="/" class="btn btn-error md m-1">Cancel</a>
+        <button type="submit" class="btn btn-success md m-1">Save</button>
+      </div>
+    </form>
+  </div>
+</section>

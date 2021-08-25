@@ -1,0 +1,19 @@
+section.login {
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .card{
+        align-items: center;
+        padding: 10px;
+        border: none;
+        & form{
+            .row{
+                align-content: center;
+            }
+        }
+    }
+    label{
+        text-align:center;
+    }
+}

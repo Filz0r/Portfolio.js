@@ -1,0 +1,31 @@
+<% if (projects.length > 0) { %>
+
+    <section class="projects">
+        <div class="container flex">
+            <div class="card bg-dark">
+                <div class="text-center">
+                    <h1 class="card-title text-light">My Projects</h1>
+                </div>
+                <div class="card-body grid">
+                    <% projects.forEach(project => { %>
+                        <div class="card bg-light">
+                            <a href="/en/projects/<%= project.slug %>">
+                                <h1 class ="card-title text-center"><%= project.title %></h1>
+                                <img src="/images/covers/<%= project.cover %> " alt="Cover" class="cover">
+                                <div class="card-text"> <%= project.description %></div>
+                            </a>
+                               
+                        </div>
+                    <% }) %>
+                </div>            
+            </div>
+        </div>    
+    </section>
+
+<% } else { %>
+
+    <div class="container flex">
+        <h1 class='xxl'>No projects :(</h1>
+    </div>
+    
+<% } %> 

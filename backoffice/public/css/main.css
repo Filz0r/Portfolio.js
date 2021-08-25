@@ -1,0 +1,92 @@
+section.login .container {
+  display: flex;
+  flex-direction: column;
+}
+section.login .card {
+  align-items: center;
+  padding: 10px;
+  border: none;
+}
+section.login .card form .row {
+  align-content: center;
+}
+section.login label {
+  text-align: center;
+}
+
+section.backoffice #myTab {
+  height: 50px;
+}
+section.backoffice #myTab .nav {
+  color: seashell;
+  border: none;
+}
+section.backoffice #myTab.nav-tabs {
+  border-bottom: none;
+}
+section.backoffice #myTab .nav-link {
+  margin-bottom: 0;
+  background-color: #212529;
+  color: seashell;
+  border: none;
+}
+section.backoffice #myTab .nav-link:hover {
+  border-bottom: royalblue 3px solid;
+}
+section.backoffice #myTab .nav-link.active {
+  color: royalblue;
+}
+section.backoffice #homepageAccordion .accordion,
+section.backoffice #homepageAccordion .accordion-item {
+  border: royalblue 2px solid;
+}
+section.backoffice #homepageAccordion .accordion::after,
+section.backoffice #homepageAccordion .accordion-item::after {
+  border-bottom: none;
+}
+section.backoffice #homepageAccordion button.accordion-button {
+  box-shadow: none;
+}
+section.backoffice #homepageAccordion button.accordion-button:focus {
+  border-bottom: royalblue 1px solid;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+section.backoffice #homepageAccordion #intro input.custom-file-input {
+  display: none;
+}
+section.backoffice #homepageAccordion #intro .custom-file {
+  display: inline-flex;
+  justify-content: center;
+}
+section.backoffice #homepageAccordion #intro label.custom-file-label {
+  background-color: #212529;
+  color: seashell;
+  border: royalblue 2px solid;
+  border-radius: 0.25rem;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  cursor: pointer;
+}
+section.backoffice #homepageAccordion #intro label.custom-file-label:hover {
+  background-color: royalblue;
+}
+section.backoffice #homepageAccordion #social input {
+  border: none;
+  border-radius: 0;
+  border-bottom: seashell 2px solid;
+  background-color: #212529;
+  color: seashell;
+}
+section.backoffice #homepageAccordion #social input.form-control:focus {
+  outline: none;
+  border-bottom: royalblue 3px solid;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+section.backoffice #homepageAccordion textarea {
+  border: royalblue 2px solid;
+}
+
+/*# sourceMappingURL=main.css.map */

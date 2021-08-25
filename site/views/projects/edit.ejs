@@ -1,0 +1,12 @@
+<section class="editProj">
+    <div class="container">
+      <div class="card bg-dark flex editCard">
+        <h1 class="my-2 xxl text-center">Edit "<%= project.title  %>"</h1>
+  
+        <form action="/admin/en/projects/edit/<%= project.id %>?_method=PUT" method="POST">
+          <%- include('../partials/_form_fields_projects') %>
+        </form>
+      </div>
+    </div>
+  </section>
+  

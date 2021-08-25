@@ -1,0 +1,138 @@
+<div class="container-fluid">
+  <div class="py-3 text-center">
+    <h2>Welcome to PortfolioJS!</h2>
+    <p class="lead">
+      Before getting started with your website we need to configure a couple of
+      things first!.
+    </p>
+  </div>
+  <div class="row">
+    <form action="/startup" method="POST" enctype="multipart/form-data">
+      <%if(error.length !== 0) {%>
+      <div
+        class="colapse alert alert-danger alert-dismissible fade show"
+        id="pageAlerts"
+        role="alert"
+      >
+        <%= error %>
+        <button
+          type="button"
+          data-bs-toggle="collapse"
+          href="#pageAlerts"
+          class="btn-close"
+          aria-label="Close"
+        ></button>
+      </div>
+      <% } %>
+      <div class="row g-3 pb-2">
+        <hr class="my-2" />
+        <h4>Account</h4>
+        <div class="col-12">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            required
+          />
+        </div>
+        <div class="col-sm-6">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            id="password"
+            placeholder=""
+            value=""
+            required
+          />
+        </div>
+
+        <div class="col-sm-6">
+          <label for="confirmPassword" class="form-label"
+            >Confirm Password</label
+          >
+          <input
+            type="password"
+            class="form-control"
+            name="confirmPassword"
+            id="confirmPassword"
+            placeholder=""
+            value=""
+            required
+          />
+        </div>
+      </div>
+      <div class="row g-3 pt-4">
+        <hr class="my-3" />
+        <h4>Website</h4>
+        <div class="col-12">
+          <label for="title" class="form-label">Website Title</label>
+          <input
+            type="text"
+            class="form-control"
+            name="title"
+            id="title"
+            placeholder="My Cool Website"
+            required
+          />
+        </div>
+        <div class="col-12">
+          <label for="contactEmail" class="form-label">Contact email</label>
+          <input
+            type="email"
+            class="form-control"
+            name="contactEmail"
+            id="contactEmail"
+            placeholder="you@example.com"
+            required
+          />
+        </div>
+        <h4>Language Settings</h4>
+        <div class="col-md-6">
+          <label for="defaultLang" class="form-label">Default Language</label>
+          <select
+            class="form-select"
+            name="defaultLang"
+            id="defaultLang"
+            required
+          >
+            <option value="eng">English</option>
+            <option value="pt">Portuguese</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label for="secondLang" class="form-label">Secondary Language</label>
+          <select
+            class="form-select"
+            name="secondLang"
+            id="secondLang"
+            required
+          >
+            <option value="None">None</option>
+            <option value="eng">English</option>
+            <option value="pt">Portuguese</option>
+          </select>
+        </div>
+      </div>
+      <button
+        class="my-4 py-3 w-100 btn btn-primary btn-lg"
+        onclick="alert()"
+        type="submit"
+      >
+        Start creating your website!
+      </button>
+    </form>
+  </div>
+  <script>
+    function alert() {
+      confirm(
+        "This will shutdown the server, if you don't have any automatic startups, you'll have to start it back up manually!"
+      );
+    }
+  </script>
+</div>

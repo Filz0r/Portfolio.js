@@ -1,0 +1,28 @@
+<section class="postHead bg-secondary">
+  <div class="container flex">
+      <div class="wrapper flex flex-colum">
+        <div class="details">
+            <div class="postTitle"><%= project.title %></div>
+            <div class="projectDesc">
+              <span class="descFixed">Description: </span><%= project.description %>
+            </div>
+          </div>
+          <div class="projectLinks">
+            <div class="website">
+              <a href="<%= project.link %>">Website Link</a>
+            </div>
+            <div class="github">
+              <a href="<%= project.github %>">Github Project</a>
+            </div>
+            <div class="postDate text-italic">
+              <%= project.createdAt.toLocaleDateString('pt-PT', { year: 'numeric',
+              month: 'long', day: 'numeric'}) %>
+            </div>
+          </div>
+      </div>
+    <img class="cover" src="/images/covers/<%= project.cover %> " alt="cover" />
+  </div>
+</section>
+<section class="postBody">
+  <div class="container flex flex-colum"><%- project.sanitizedHtml %></div>
+</section>

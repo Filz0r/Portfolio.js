@@ -1,0 +1,136 @@
+<section class="backoffice">
+  <ul
+    class="nav nav-tabs nav-dark bg-dark justify-content-center"
+    id="myTab"
+    role="tablist"
+  >
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-link active fs-4"
+        id="home-tab"
+        data-bs-toggle="tab"
+        data-bs-target="#home"
+        type="button"
+        role="tab"
+        aria-controls="home"
+        aria-selected="true"
+      >
+        Home
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-link fs-4"
+        id="projects-tab"
+        data-bs-toggle="tab"
+        data-bs-target="#projects"
+        type="button"
+        role="tab"
+        aria-controls="projects"
+        aria-selected="false"
+      >
+        Projects
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-link fs-4"
+        id="plugin-tab"
+        data-bs-toggle="tab"
+        data-bs-target="#plugin"
+        type="button"
+        role="tab"
+        aria-controls="plugin"
+        aria-selected="false"
+      >
+        Plugins
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-link fs-4"
+        id="account-tab"
+        data-bs-toggle="tab"
+        data-bs-target="#account"
+        type="button"
+        role="tab"
+        aria-controls="account"
+        aria-selected="false"
+      >
+        Account
+      </button>
+    </li>
+  </ul>
+  <%if(error.length !== 0) {%>
+  <div
+    class="colapse alert alert-danger alert-dismissible fade show"
+    id="pageAlerts"
+    role="alert"
+  >
+    <%= error %>
+    <button
+      type="button"
+      data-bs-toggle="collapse"
+      href="#pageAlerts"
+      class="btn-close"
+      aria-label="Close"
+    ></button>
+  </div>
+  <% } %> <%if(success.length !== 0) {%>
+  <div
+    class="colapse alert alert-success alert-dismissible fade show"
+    id="pageAlerts"
+    role="alert"
+  >
+    <%= success %>
+    <button
+      type="button"
+      data-bs-toggle="collapse"
+      href="#pageAlerts"
+      class="btn-close"
+      aria-label="Close"
+    ></button>
+  </div>
+  <% } %>
+  <div class="tab-content my-2" id="myTabContent">
+    <div
+      class="tab-pane fade show active"
+      id="home"
+      role="tabpanel"
+      aria-labelledby="home-tab"
+    >
+      <%- include('../partials/_home_tab') %>
+    </div>
+    <div
+      class="tab-pane fade"
+      id="projects"
+      role="tabpanel"
+      aria-labelledby="projects-tab"
+    >
+      <%- include('../partials/_projects_tab') %>
+    </div>
+    <div
+      class="tab-pane fade"
+      id="plugins"
+      role="tabpanel"
+      aria-labelledby="plugin-tab"
+    >
+      <%- include('../partials/_plugin_tab') %>
+    </div>
+    <div
+      class="tab-pane fade"
+      id="account"
+      role="tabpanel"
+      aria-labelledby="account-tab"
+    >
+      <%- include('../partials/_account_tab') %>
+    </div>
+  </div>
+</section>
+<script>
+  // select name change (w3schools FTW)
+  $('.custom-file-input').on('change', function () {
+    var fileName = $(this).val().split('\\').pop();
+    $(this).siblings('.custom-file-label').addClass('selected').html(fileName);
+  });
+</script>

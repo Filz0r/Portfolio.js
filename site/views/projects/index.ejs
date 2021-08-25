@@ -1,0 +1,75 @@
+<% if (path === '/admin/en/projects/') { %>
+    <% if (projects.length > 0) { %>
+        <section class="myProjects">
+            <div class="container flex">
+                <div class="card bg-dark">
+                    <div class="text-center">
+                        <h1 class="xl text-light">My Projects</h1>
+                    </div>
+                    <div class="card-body grid">
+                        <% projects.forEach(project => { %>
+                            <div class="card bg-light">
+                                    <h1 class ="card-title xl text-center"><%= project.title %></h4>
+                                    <div class="card-subtitle text-primary text-center"><%= project.createdAt.toLocaleDateString() %></div>
+                                    <div class="card-text"> <%= project.description %></div>
+                                    <div class="btn-group">
+                                        <a href="/admin/en/projects/<%= project.slug %>" class="btn btn-primary">Read More</a>
+                                        <a href="/admin/en/projects/edit/<%= project.id %>" class="btn btn-success">Edit</a>
+                                        <form action="/admin/en/projects/<%= project.id %>?_method=DELETE" method="POST">
+                                        <button class="btn btn-error">Delete</button>
+                                        </form>
+                                    </div>
+                            </div>
+                        <% }) %>
+                        <div class="card bg-dark flex new">
+                            <a href="/admin/en/projects/new" class="btn btn-success xxl">
+                                New
+                            </a>
+                        </div>
+                    </div>            
+                </div>
+            </div>    
+        </section>
+    <% } else { %>
+        <div class="container flex">
+            <h1 class='xxl'>No projects :(</h1>
+        </div>
+    <% } %> 
+<% } else if (path === '/admin/pt/projects/') { %> 
+    <% if (projects.length > 0) { %>
+        <section class="myProjects">
+            <div class="container flex">
+                <div class="card bg-dark">
+                    <div class="text-center">
+                        <h1 class="xl text-light">My Projects</h1>
+                    </div>
+                    <div class="card-body grid">
+                        <% projects.forEach(project => { %>
+                            <div class="card bg-light">
+                                    <h1 class ="card-title xl text-center"><%= project.title %></h4>
+                                    <div class="card-subtitle text-primary text-center"><%= project.createdAt.toLocaleDateString() %></div>
+                                    <div class="card-text"> <%= project.description %></div>
+                                    <div class="btn-group">
+                                        <a href="/admin/pt/projects/<%= project.slug %>" class="btn btn-primary">Read More</a>
+                                        <a href="/admin/pt/projects/edit/<%= project.id %>" class="btn btn-success">Edit</a>
+                                        <form action="/admin/pt/projects/<%= project.id %>?_method=DELETE" method="POST">
+                                        <button class="btn btn-error">Delete</button>
+                                        </form>
+                                    </div>
+                            </div>
+                        <% }) %>
+                        <div class="card bg-dark flex new">
+                            <a href="/admin/en/projects/new" class="btn btn-success xxl">
+                                New
+                            </a>
+                        </div>
+                    </div>            
+                </div>
+            </div>    
+        </section>
+    <% } else { %>
+        <div class="container flex">
+            <h1 class='xxl'>No projects :(</h1>
+        </div>
+    <% } %> 
+<% } %> 

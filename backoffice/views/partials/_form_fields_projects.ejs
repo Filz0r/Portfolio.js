@@ -1,0 +1,52 @@
+<div class="form-group">
+  <label for="title">Title</label>
+  <input
+    required
+    value="<%= project.title %>"
+    type="text"
+    name="title"
+    id="title"
+    class="form-control"
+    placeholder="Insert the post title"
+  />
+</div>
+<div class="form-group">
+  <label for="description">Description</label>
+  <textarea name="description" id="description" class="form-control" cols="30" rows="5" placeholder="Enter the post description">
+<%= project.description %>
+</textarea>
+</div>
+<div class="form-group">
+  <label for="markdown">Markdown</label>
+  <textarea name="markdown" id="markdown" class="form-control" cols="30" rows="20" placeholder="Enter the Post here in markdown format">
+<%= project.markdown %>
+  </textarea>
+</div>
+<div class="form-group grid">
+  <div class="form-group">
+    <label for="github">Github link</label>
+    <input type="text" name="github" id="github" class="form-control" value="<%= typeof project.github != 'undefined' && project.github.length > 0 ? project.github : 'None' %>">
+    <label for="link">Website Link</label>
+    <input type="text" name="link" id="link" class="form-control" value="<%= typeof project.link != 'undefined' && project.link.length > 0 ? project.link : 'None' %>">
+  </div>
+  <div class="form-group">
+    <div class="flex flex-colum flex-end my-1">
+      <label for="published">Published</label>
+    <label class="switch">
+      <input name="published" id="published" type="checkbox"  <%= project.published == true ? 'checked' : ''%> />
+      <span class="slider round"></span>
+    </label>
+    </div>
+    <% if (path == '/admin/en/projects/new' || path == '/admin/pt/projects/new') { %> 
+    <div class="new-button">
+      <label for="cover">Post Cover</label>
+      <input name="cover" id="cover" type='file' required>
+    </div>
+  <% } %> 
+  </div>
+</div>
+
+<div class="btn-group">
+  <a href="/" class="btn btn-error md m-1">Cancel</a>
+  <button type="submit" class="btn btn-success md m-1">Save</button>
+</div>

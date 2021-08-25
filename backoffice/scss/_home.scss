@@ -1,0 +1,79 @@
+section.backoffice {
+  #myTab {
+    height: 50px;
+    .nav {
+      color: seashell;
+      border: none;
+    }
+    &.nav-tabs {
+      border-bottom: none;
+    }
+    .nav-link {
+      margin-bottom: 0;
+      background-color: #212529;
+      color: seashell;
+      border: none;
+      &:hover {
+        border-bottom: royalblue 3px solid;
+      }
+      &.active {
+        color: royalblue;
+      }
+    }
+  }
+  #homepageAccordion {
+    .accordion,
+    .accordion-item {
+      border: royalblue 2px solid;
+      &::after {
+        border-bottom: none;
+      }
+    }
+    button.accordion-button {
+      box-shadow: none;
+      &:focus {
+        border-bottom: royalblue 1px solid;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+    }
+    #intro {
+      input.custom-file-input {
+        display: none;
+      }
+      .custom-file {
+        display: inline-flex;
+        justify-content: center;
+      }
+      label.custom-file-label {
+        background-color: #212529;
+        color: seashell;
+        border: royalblue 2px solid;
+        border-radius: 0.25rem;
+        padding: 20px;
+        width: 300px;
+        text-align: center;
+        cursor: pointer;
+        &:hover {
+          background-color: royalblue;
+        }
+      }
+    }
+    #social input {
+      &.form-control:focus {
+        outline: none;
+        border-bottom: royalblue 3px solid;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+      border: none;
+      border-radius: 0;
+      border-bottom: seashell 2px solid;
+      background-color: #212529;
+      color: seashell;
+    }
+    textarea {
+      border: royalblue 2px solid;
+    }
+  }
+}

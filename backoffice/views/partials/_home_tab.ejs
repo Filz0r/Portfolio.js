@@ -1,0 +1,263 @@
+<div class="accordion bg-dark text-white" id="homepageAccordion">
+  <div class="accordion-item bg-dark text-white">
+    <h2 class="accordion-header" id="headingTwo">
+      <button
+        class="accordion-button bg-dark text-white collapsed fs-3"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapseTwo"
+        aria-expanded="false"
+        aria-controls="collapseTwo"
+      >
+        Introduction
+      </button>
+    </h2>
+    <div
+      id="collapseTwo"
+      class="accordion-collapse collapse show"
+      aria-labelledby="headingTwo"
+      data-bs-parent="#homepageAccordion"
+    >
+      <div class="accordion-body row">
+        <form
+          action="/admin/home"
+          method="post"
+          enctype="multipart/form-data"
+          id="intro"
+        >
+          <input
+            type="hidden"
+            class="form-control"
+            id="formInfo"
+            name="formInfo"
+            value="intro"
+          />
+          <h2 class="my-3 text-center">Introduction Text</h2>
+          <div class="row my-3">
+            <textarea
+              name="introTxt"
+              id="introTxt"
+              cols="30"
+              rows="20"
+              class="form-control bg-dark text-white fs-6"
+            ></textarea>
+          </div>
+          <h2 class="my-3 text-center">Images</h2>
+          <div class="row my-2">
+            <div class="col-md-6 custom-file my-2">
+              <input
+                class="custom-file-input bg-dark text-white btn-dark"
+                type="file"
+                name="favicon"
+                id="favicon"
+              />
+              <label for="favicon" class="custom-file-label fs-6"
+                >Upload your website logo (favicon)</label
+              >
+            </div>
+            <div class="col-md-6 custom-file my-2">
+              <input
+                class="custom-file-input bg-dark text-white btn-dark"
+                type="file"
+                name="homeImage"
+                id="homeImage"
+              />
+              <label for="homeImage" class="custom-file-label fs-6"
+                >Upload your homepage image</label
+              >
+            </div>
+          </div>
+          <div class="d-flex justify-content-end mt-3">
+            <label for="language" class="m-3 fs-5">Language</label>
+            <select
+              class="form-select fs-5"
+              name="language"
+              id="language"
+              required
+            >
+              <% langs.forEach(language => { %>
+              <!-- prettier-ignore -->
+              <option value=<%- language %>><%= language %></option>
+              <% }) %>
+            </select>
+            <button type="submit" class="btn btn-lg btn-primary mx-2 px-5">
+              Save!
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item bg-dark text-white">
+    <h2 class="accordion-header" id="headingThree">
+      <button
+        class="accordion-button bg-dark text-white collapsed fs-3"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapseThree"
+        aria-expanded="false"
+        aria-controls="collapseThree"
+      >
+        About
+      </button>
+    </h2>
+    <div
+      id="collapseThree"
+      class="accordion-collapse collapse"
+      aria-labelledby="headingThree"
+      data-bs-parent="#homepageAccordion"
+    >
+      <div class="accordion-body row">
+        <form
+          action="/admin/home"
+          method="post"
+          enctype="multipart/form-data"
+          id="about"
+        >
+          <input
+            type="hidden"
+            class="form-control"
+            id="formInfo"
+            name="formInfo"
+            value="about"
+          />
+          <div class="row my-3">
+            <textarea
+              name="aboutTxt"
+              id="aboutTxt"
+              cols="30"
+              rows="20"
+              class="form-control bg-dark text-white"
+            ></textarea>
+          </div>
+
+          <div class="d-flex justify-content-end mt-3">
+            <label for="language" class="m-3 fs-5">Language</label>
+            <select
+              class="form-select fs-5"
+              name="language"
+              id="language"
+              required
+            >
+              <% langs.forEach(language => { %>
+              <!-- prettier-ignore -->
+              <option value=<%= language %>> <%= language %></option>
+              <% }) %>
+            </select>
+            <button type="submit" class="btn btn-lg btn-primary mx-2 px-5">
+              Save!
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item bg-dark text-white">
+    <h2 class="accordion-header" id="headingOne">
+      <button
+        class="accordion-button bg-dark text-white fs-3"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapseOne"
+        aria-expanded="true"
+        aria-controls="collapseOne"
+      >
+        Social Media
+      </button>
+    </h2>
+    <div
+      id="collapseOne"
+      class="accordion-collapse collapse"
+      aria-labelledby="headingOne"
+      data-bs-parent="#homepageAccordion"
+    >
+      <div class="accordion-body row">
+        <form
+          action="/admin/home"
+          method="post"
+          enctype="multipart/form-data"
+          id="social"
+        >
+          <input
+            type="hidden"
+            class="form-control"
+            id="formInfo"
+            name="formInfo"
+            value="social"
+          />
+          <div class="row mb-3">
+            <label for="email" class="col-form-label col-sm-1 text-center"
+              ><i class="fas fa-envelope fa-2x"></i
+            ></label>
+            <div class="col-sm-11">
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="github" class="col-form-label col-sm-1 text-center"
+              ><i class="fab fa-github fa-2x"></i
+            ></label>
+            <div class="col-sm-11">
+              <input
+                type="text"
+                class="form-control"
+                id="github"
+                name="github"
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="linkedin" class="col-form-label col-sm-1 text-center"
+              ><i class="fab fa-linkedin fa-2x"></i
+            ></label>
+            <div class="col-sm-11">
+              <input
+                type="text"
+                class="form-control"
+                id="linkedin"
+                name="linkedin"
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="facebook" class="col-form-label col-sm-1 text-center"
+              ><i class="fab fa-facebook fa-2x"></i
+            ></label>
+            <div class="col-sm-11">
+              <input
+                type="text"
+                class="form-control"
+                id="facebook"
+                name="facebook"
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="instagram" class="col-form-label col-sm-1 text-center"
+              ><i class="fab fa-instagram fa-2x"></i
+            ></label>
+            <div class="col-sm-11">
+              <input
+                type="text"
+                class="form-control"
+                id="instagram"
+                name="instagram"
+              />
+            </div>
+          </div>
+          <div class="d-flex justify-content-end mt-3">
+            <button type="submit" class="btn btn-lg btn-primary mx-2 px-5">
+              Save!
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

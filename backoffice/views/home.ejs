@@ -1,0 +1,32 @@
+<section class="about bg-primary py-2">
+  <div class="container flex">
+    <div class="about"><%- about.sanitizedDesc %></div>
+    <img class="homeImg" src="/images/me.jpg" />
+  </div>
+</section>
+<section class="more">
+  <div class="container moreAbout"><%- about.sanitizedAbout %></div>
+</section>
+<section class="skills pt-2 bg-dark">
+  <div class="container">
+    <%- about.sanitizedSkills %>
+    <div class="skill-bag">
+      <div class="card">
+        <h3 class="md text-dark text-center">Web Development</h3>
+        <div class="skillBag flex">
+          <% webDev.forEach(skill => { %>
+          <img class="skillImg" src="/images/logos/<%= skill.path %>" />
+          <% }) %>
+        </div>
+      </div>
+      <div class="card">
+        <h3 class="md text-dark text-center py-2">Web Administration</h3>
+        <div class="skillBag flex">
+          <% devOps.forEach(skill => { %>
+          <img class="skillImg" src="/images/logos/<%= skill.path %>" />
+          <% }) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

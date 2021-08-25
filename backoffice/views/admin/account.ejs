@@ -1,0 +1,25 @@
+<section class="account">
+    <div class="container pb-1">
+        <% if (message.length > 0) { %> 
+            <div class="card btn-success">
+                <%= message %> 
+            </div>
+        <% } %> 
+        <form action="/admin/account/" method="POST">
+            <div class="form-group">
+                <label for="oldPW">Old Password</label>
+                <input type="password" class="form-control" id="oldPW" name="oldPW" required>
+            </div>
+            <div class="form-group">
+                <label for="newPW">New Password</label>
+                <input type="password" class="form-control" id="newPW" name="newPW" required>
+            </div>
+            <div class="form-group">
+                <label for="cNewPW">Confirm New Password</label>
+                <input type="password" class="form-control" id="cNewPW" name="cNewPW" required>
+            </div>
+            <button type="submit" class="btn btn-success float-right">Save</button>
+        </form>
+    </div>
+</section>
+
